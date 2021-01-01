@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/spoiler-zone/static/css/main.d0096270.chunk.css",
-    "main.js": "/spoiler-zone/static/js/main.43023de0.chunk.js",
-    "main.js.map": "/spoiler-zone/static/js/main.43023de0.chunk.js.map",
+    "main.css": "/spoiler-zone/static/css/main.7b578443.chunk.css",
+    "main.js": "/spoiler-zone/static/js/main.9daf38db.chunk.js",
+    "main.js.map": "/spoiler-zone/static/js/main.9daf38db.chunk.js.map",
     "runtime-main.js": "/spoiler-zone/static/js/runtime-main.a8e2c465.js",
     "runtime-main.js.map": "/spoiler-zone/static/js/runtime-main.a8e2c465.js.map",
-    "static/js/2.bb05751e.chunk.js": "/spoiler-zone/static/js/2.bb05751e.chunk.js",
-    "static/js/2.bb05751e.chunk.js.map": "/spoiler-zone/static/js/2.bb05751e.chunk.js.map",
+    "static/js/2.af128b5d.chunk.js": "/spoiler-zone/static/js/2.af128b5d.chunk.js",
+    "static/js/2.af128b5d.chunk.js.map": "/spoiler-zone/static/js/2.af128b5d.chunk.js.map",
     "index.html": "/spoiler-zone/index.html",
-    "static/css/main.d0096270.chunk.css.map": "/spoiler-zone/static/css/main.d0096270.chunk.css.map",
-    "static/js/2.bb05751e.chunk.js.LICENSE.txt": "/spoiler-zone/static/js/2.bb05751e.chunk.js.LICENSE.txt",
+    "static/css/main.7b578443.chunk.css.map": "/spoiler-zone/static/css/main.7b578443.chunk.css.map",
+    "static/js/2.af128b5d.chunk.js.LICENSE.txt": "/spoiler-zone/static/js/2.af128b5d.chunk.js.LICENSE.txt",
     "static/media/index.css": "/spoiler-zone/static/media/Spoiler Zone 2.53597066.png",
-    "static/media/inception-spinning.e5e59a80.png": "/spoiler-zone/static/media/inception-spinning.e5e59a80.png",
-    "static/media/invisible-man.41a250d3.jpg": "/spoiler-zone/static/media/invisible-man.41a250d3.jpg"
+    "static/media/TMDB-logo.bf7f470b.svg": "/spoiler-zone/static/media/TMDB-logo.bf7f470b.svg",
+    "static/media/inception-spinning.e5e59a80.png": "/spoiler-zone/static/media/inception-spinning.e5e59a80.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a8e2c465.js",
-    "static/js/2.bb05751e.chunk.js",
-    "static/css/main.d0096270.chunk.css",
-    "static/js/main.43023de0.chunk.js"
+    "static/js/2.af128b5d.chunk.js",
+    "static/css/main.7b578443.chunk.css",
+    "static/js/main.9daf38db.chunk.js"
   ]
 }
