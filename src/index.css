@@ -1,13 +1,408 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body, html {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --------------------- Navbar -----------------------------*/
+
+.Navbar {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Lato', sans-serif;
+}
+
+.Navbar .leftSide {
+  margin: 15px;
+  cursor: pointer;
+}
+
+.Navbar .leftSide a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: inherit;
+  font-weight: 700;
+}
+
+.Navbar .rightSide {
+  display: flex;
+  align-items: center;
+}
+
+.Navbar .rightSide a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: inherit;
+  font-weight: 700;
+  margin-right: 60px;
+  cursor: pointer;
+}
+
+.sidenav {
+  display: none;
+}
+
+.Navbar i {
+  display: none;
+}
+
+/* --------------------- Hero Section -----------------------------*/
+
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705)), url(./assets/Spoiler\ Zone\ 2.png);
+
+  /* Set a specific height */
+  height: 93vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  position: absolute;
+  top: 37%;
+  left: 100px;
+  color: white;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.hero-text form input {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background: rgba(255, 255, 255, 0.39);
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 500px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.hero-text form input::placeholder {
+  color: rgba(255, 255, 255, 0.726);
+}
+
+/* --------------------- Footer -----------------------------*/
+
+footer {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* --------------------- About -----------------------------*/
+
+.About {
+  min-height: 87vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: auto 800px;
+  color: white;
+}
+
+.About .rightSide {
+  height: 100%;
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+}
+
+.About .rightSide img {
+  max-width:100%;
+  height:auto;
+  padding: 100px;
+  mask-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705));
+}
+
+.About .leftSide {
+  margin-left: 30px;
+}
+
+.About .leftSide h1 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 2.8rem;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.About .leftSide p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+
+#attribution {
+  color: rgba(255, 255, 255, 0.616);
+}
+
+.About .leftSide img {
+  width: 200px;
+}
+
+/* --------------------- Catalogo -----------------------------*/
+
+.Catalogo {
+  margin-left: 30px;
+  width: 100vw;
+  min-height: 81vh;
+  color: white;
+}
+
+.Catalogo h1 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 2.8rem;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.Catalogo .letterDiv {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: justify;
+  margin-top: 20px;
+}
+
+.movieLink {
+  padding-left: 15px;
+  margin-top: 15px;
+}
+
+.Catalogo p a {
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: inherit;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+/* --------------------- Filme -----------------------------*/
+
+.Filme {
+  background-color: white;
+  padding: 40px 100px;
+}
+
+.movieHeader {
+  display: grid;
+  grid-template-columns: 400px auto;
+}
+
+.Filme img {
+  padding: 50px 50px 50px 0;
+  max-width:100%;
+  height:auto;
+}
+
+.movieDescription {
+  padding-left: 30px;
+}
+
+.Filme h1 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 2.8rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#tagline {
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+}
+
+.Filme p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.Filme p b {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+
+.Filme li {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.Filme li b {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+
+.spoilerDivision {
+  background-color: #D3D3CF;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 10px;
+  margin: 40px -10px 50px;
+}
+
+
+
+
+/* --------------------- Mobile View -----------------------------*/
+
+/* -------------- Filme --------------------*/
+
+@media only screen and (max-width: 1000px) {
+  .spoilerDivision {
+    padding-left: 100px;
+    margin: 40px -100px 50px;
+  }
+
+  .Filme {
+    padding: 40px 50px;
+  }
+
+  .movieHeader {
+    grid-template: auto / auto;
+    justify-items: center;
+  }
+
+  .movieDescription {
+    text-align: center;
+    padding-left: 0;
+
+  }
+
+  #tagline {
+    text-align: center;
+  }
+
+  .Filme img {
+    padding: 20px 0 0 0;
+  }
+}
+
+
+/* -------------- Hero --------------------*/
+
+@media only screen and (max-width: 1100px) {
+  .hero-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-text {
+    position: relative;
+    top: 37%;
+    left: 0;
+    font-size: 2.8rem;
+  }
+  
+  .hero-text form input {
+    margin-top: 30px;
+    width: 400px;
+  }  
+}
+
+
+/* -------------- Sobre --------------------*/
+
+@media only screen and (max-width: 1250px) {
+  .About {
+    grid-template: auto / auto;
+  }
+
+  .About .leftSide {
+    margin: 0 40px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .About .rightSide img {
+    padding: 60px;
+  }
+}
+
+
+/* -------------- Sidebar --------------------*/
+
+@media only screen and (max-width: 600px) {
+  .Navbar .rightSide {
+    display: none;
+  }
+
+  .Navbar span {
+    display: block;
+  }
+
+  .Navbar i {
+    display: block;
+    align-self: center;
+    margin-right: 15px;
+  }
+
+  .sidenav {
+    display: block;
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: black; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    padding: 8px 8px 8px 32px;
+    margin-left: 50px;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    transition: 0.3s;
+  }
 }

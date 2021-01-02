@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
 
-function App() {
+import Navbar from './components/Navbar'
+import HeroSection from './components/HeroSection'
+import Footer from './components/Footer'
+
+import About from './components/About'
+import Catalogo from './components/Catalogo'
+import Filme from './components/Filme'
+
+import {
+  Switch,
+  Route,
+  HashRouter
+} from "react-router-dom"
+
+export default function App() {
+  const [query, setQuery] = useState('');
+  const [movies, setMovies] = useState([]);
+  const [filmeID, setFilmeID] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter basename='/'>
+      <div className="App">
+        <Switch>
+
+          <Route path='/' exact>
+            <Navbar />
+            <HeroSection query={query} setQuery={setQuery} setMovies={setMovies} />
+            <Footer />
+          </Route>
+
+          <Route path='/catalogo'>
+            <Navbar />
+            <Catalogo />
+            <Footer />
+          </Route>
+
+          <Route path='/sobre'>
+            <Navbar />
+            <About />
+            <Footer />
+          </Route>
+
+          <Route path={`/filme/:id`}>
+            <Navbar />
+            <Filme setFilmeID={setFilmeID} />
+            <Footer />
+          </Route>
+
+        </Switch>
+      </div>
+    </HashRouter>
   );
 }
 
-export default App;
+
