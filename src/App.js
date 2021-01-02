@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import About from './components/About'
 import Catalogo from './components/Catalogo'
 import Filme from './components/Filme'
+import Search from './components/Search'
 
 import {
   Switch,
@@ -45,6 +46,12 @@ export default function App() {
           <Route path={`/filme/:id`}>
             <Navbar />
             <Filme setFilmeID={setFilmeID} />
+            <Footer />
+          </Route>
+
+          <Route path='search/:id'>
+            <Navbar />
+            <Search />
             <Footer />
           </Route>
 

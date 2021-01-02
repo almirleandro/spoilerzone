@@ -62,7 +62,7 @@ body, html {
   background-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705)), url(./assets/Spoiler\ Zone\ 2.png);
 
   /* Set a specific height */
-  height: 93vh;
+  min-height: 93vh;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: top;
@@ -74,7 +74,7 @@ body, html {
 .hero-text {
   font-family: 'Barlow Semi Condensed', sans-serif;
   position: absolute;
-  top: 37%;
+  top: 270px;
   left: 100px;
   color: white;
   font-size: 4rem;
@@ -310,26 +310,50 @@ footer {
   }
 }
 
+@media only screen and (max-width: 450px) {
+  .spoilerDivision {
+    font-size: 2rem;
+    margin: 30px -100px 40px;
+  }
+
+  .About .leftSide img {
+    margin-bottom: 30px;
+  }
+}
+
 
 /* -------------- Hero --------------------*/
 
 @media only screen and (max-width: 1100px) {
-  .hero-image {
-    display: flex;
-    justify-content: center;
-  }
-
   .hero-text {
-    position: relative;
-    top: 37%;
-    left: 0;
     font-size: 2.8rem;
+    top: 200px;
   }
   
   .hero-text form input {
     margin-top: 30px;
     width: 400px;
   }  
+}
+
+@media only screen and (max-width: 650px) {
+  .hero-text {
+    font-size: 1.8rem;
+    top: 100px;
+    left: 150px;
+  }
+  
+  .hero-text form input {
+    font-size: 0.8rem;
+    margin-top: 30px;
+    width: 250px;
+  } 
+}
+
+@media only screen and (max-width: 550px) {
+  .hero-text {
+    left: 50px;
+  }
 }
 
 
@@ -343,13 +367,30 @@ footer {
   .About .leftSide {
     margin: 0 40px;
   }
+
+  .About .rightSide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .About .rightSide img {
+    max-width:800px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
   .About .rightSide img {
+    max-width:100%;
     padding: 60px;
   }
 }
+
+@media only screen and (max-width: 530px) {
+  .About .rightSide img {
+    display: none;
+  }
+}
+
 
 
 /* -------------- Sidebar --------------------*/
