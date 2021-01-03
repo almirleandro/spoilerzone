@@ -273,6 +273,13 @@ footer {
   margin: 40px -10px 50px;
 }
 
+/* --------------------- Search -----------------------------*/
+
+.Search {
+  background-color: white;
+  padding: 40px 100px;
+}
+
 
 
 
@@ -326,7 +333,7 @@ footer {
 
 @media only screen and (max-width: 1100px) {
   .hero-text {
-    font-size: 2.8rem;
+    font-size: 3.3rem;
     top: 200px;
   }
   
@@ -338,9 +345,19 @@ footer {
 
 @media only screen and (max-width: 650px) {
   .hero-text {
+    font-size: 2.3rem;
+    top: 150px;
+  }
+  
+  .hero-text form input {
+    margin-top: 30px;
+    width: 350px;
+  } 
+}
+
+@media only screen and (max-width: 550px) {
+  .hero-text {
     font-size: 1.8rem;
-    top: 100px;
-    left: 150px;
   }
   
   .hero-text form input {
@@ -350,9 +367,30 @@ footer {
   } 
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 440px) {
   .hero-text {
+    font-size: 1.8rem;
     left: 50px;
+  }
+  
+  .hero-text form input {
+    font-size: 0.8rem;
+    margin-top: 30px;
+    width: 250px;
+  } 
+}
+
+
+
+@media only screen and (max-height: 750px) {
+  .hero-text {
+    top: 150px;
+  }
+}
+
+@media only screen and (max-height: 530px) {
+  .hero-text {
+    top: 50px;
   }
 }
 
