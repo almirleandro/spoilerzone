@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import firebase from '../firebase';
+import noImage342 from '../assets/no-image342.png';
 
-export default function Filme(props) {
+export default function Filme() {
   const [movieInfo, setMovieInfo] = useState();
   const [direction, setDirection] = useState();
   const [streamers, setStreamers] = useState();
@@ -25,6 +26,7 @@ export default function Filme(props) {
 
       if (DBinfo[0] === undefined) { // Tentar lembrar por que eu coloquei esse if aqui (lembrei: foi para poder exibir páginas que ainda não têm spoilers (ainda dá para melhorar))
         console.log('Filme não contém spoilers no banco de dados');
+        setspoilersDB([]);
       } else {
         setspoilersDB(DBinfo[0].spoilers);
       }
@@ -103,10 +105,10 @@ export default function Filme(props) {
     getDirector();
     getStreaming();
     getSpoilers();
-    props.setFilmeID(filmeID);
   }, [filmeID]);
 
   // Put the spoiler in a JSX format
+  console.log(spoilersDB)
   const spoilersArray = spoilersDB.map(item => {
     return <p key={item.key}><b>{item.pergunta}</b> {item.text}</p>
   });
@@ -114,7 +116,7 @@ export default function Filme(props) {
   return (
     <main className='Filme'>
       {movieInfo ? <div className='movieHeader'>
-        <img src={'https://image.tmdb.org/t/p/w342' + movieInfo.poster_path} alt={spoilersDB.titulo}/>
+        <img src={movieInfo.poster_path ? 'https://image.tmdb.org/t/p/w342' + movieInfo.poster_path : noImage342} alt={spoilersDB.titulo}/>
         <div className='movieDescription'>
           <h1>{movieInfo.title} ({movieInfo.release_date.slice(0,4)})</h1>
           {movieInfo.tagline ? <p id='tagline'><em>"{movieInfo.tagline}"</em></p> : null}
@@ -126,7 +128,7 @@ export default function Filme(props) {
       </div> : null}
       <div className='spoilerDivision'>Spoilers a seguir</div>
       <div className='spoilers'>
-        {spoilersArray}
+        {spoilersArray[0] ? spoilersArray : <p>No spoilers</p>}
       </div>
     </main>
   )

@@ -277,9 +277,42 @@ footer {
 
 .Search {
   background-color: white;
-  padding: 40px 100px;
+  padding: 60px 60px;
 }
 
+.movieGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.movieBlock {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.movieBlock .rightSide {
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.movieBlock h1 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  margin-bottom: 20px;
+}
+
+.movieBlock p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.btnFlex {
+  display: flex;
+  justify-content: space-around;
+}
 
 
 

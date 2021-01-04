@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
@@ -16,9 +16,6 @@ import {
 } from "react-router-dom"
 
 export default function App() {
-  const [query, setQuery] = useState('');
-  const [movies, setMovies] = useState([]);
-  const [filmeID, setFilmeID] = useState('');
 
   return (
     <HashRouter basename='/'>
@@ -27,7 +24,7 @@ export default function App() {
 
           <Route path='/' exact>
             <Navbar />
-            <HeroSection query={query} setQuery={setQuery} setMovies={setMovies} />
+            <HeroSection />
             <Footer />
           </Route>
 
@@ -45,11 +42,11 @@ export default function App() {
 
           <Route path={`/filme/:id`}>
             <Navbar />
-            <Filme setFilmeID={setFilmeID} />
+            <Filme />
             <Footer />
           </Route>
 
-          <Route path='search/:id'>
+          <Route path='/search/:query'>
             <Navbar />
             <Search />
             <Footer />
