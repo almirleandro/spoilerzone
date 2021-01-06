@@ -22,6 +22,7 @@ export default function Catalogo() {
   
   useEffect(() => {
     getMovieList();
+    // eslint-disable-next-line
   }, []);
   
   

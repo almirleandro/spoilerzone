@@ -33,6 +33,11 @@ body, html {
   font-weight: 700;
 }
 
+.Navbar .rightSide a:hover {
+  color: rgb(38, 150, 255);
+  transition: 0.2s;
+}
+
 .Navbar .rightSide {
   display: flex;
   align-items: center;
@@ -45,6 +50,7 @@ body, html {
   font-weight: 700;
   margin-right: 60px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .sidenav {
@@ -148,6 +154,11 @@ footer {
   font-weight: 700;
   font-size: 1.3rem;
   text-align: justify;
+}
+
+.About .leftSide p a {
+  text-decoration: none;
+  color: rgb(44, 118, 255);
 }
 
 #attribution {
@@ -273,11 +284,23 @@ footer {
   margin: 40px -10px 50px;
 }
 
+.spoilers p a {
+  text-decoration: none;
+  color: rgb(44, 118, 255);
+}
+
 /* --------------------- Search -----------------------------*/
 
 .Search {
   background-color: white;
   padding: 60px 60px;
+}
+
+.Search h1 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 2.0rem;
+  margin-bottom: 20px;
 }
 
 .movieGrid {
@@ -290,8 +313,12 @@ footer {
   margin-bottom: 30px;
 }
 
+.movieBlock img {
+  width: 150px;
+}
+
 .movieBlock .rightSide {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 40px;
   margin-right: 40px;
 }
@@ -299,13 +326,13 @@ footer {
 .movieBlock h1 {
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 600;
-  font-size: 2.25rem;
+  font-size: 2.0rem;
   margin-bottom: 20px;
 }
 
 .movieBlock p {
   font-family: 'Lato', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   margin-bottom: 15px;
 }
 
@@ -313,6 +340,81 @@ footer {
   display: flex;
   justify-content: space-around;
 }
+
+.btnFlex button {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 600;
+  outline: none;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  padding: 5px 15px;
+  border: 3px solid rgb(180, 180, 180);
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#pageCount {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.0rem;
+}
+
+/* --------------------- Add Spoiler Section ------------------------*/
+
+.AddSpoiler {
+  background-color:#e4e4e4;
+  padding: 20px;
+  margin: 80px -10px 50px;
+}
+
+#SendSpoilerTitle {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.AddSpoiler input, textarea {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.AddSpoiler textarea {
+  min-height: 200px;
+}
+
+.AddSpoiler button {
+  font-size: 0.9rem;
+  background-color: rgb(38, 150, 255);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#movieName {
+  padding-left: 6px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+#sendSpoilerMsg {
+  font-family: 'Lato', sans-serif;
+  font-size: medium;
+}
+
+
 
 
 
@@ -457,7 +559,7 @@ footer {
 }
 
 @media only screen and (max-width: 530px) {
-  .About .rightSide img {
+  .About .rightSide {
     display: none;
   }
 }
@@ -516,5 +618,98 @@ footer {
     outline: none;
     color: white;
     transition: 0.3s;
+  }
+}
+
+
+/* -------------- Search --------------------*/
+
+@media only screen and (max-width: 1160px) {
+  .movieGrid {
+    grid-template-columns: 1fr;
+    margin-left: 100px;
+  }
+
+  .movieBlock img {
+    width: auto;
+  }
+
+  .movieBlock h1 {
+    font-size: 2.2rem;
+  }
+  
+  .movieBlock p {
+    font-size: 1.15rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .movieGrid {
+    margin-left: 0;
+  }
+
+  .movieBlock .rightSide {
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .movieBlock {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movieBlock .rightSide {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .movieBlock h1 {
+    margin-bottom: 10px;
+  }
+
+  .originalTitle {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .movieBlock img {
+    width: 150px;
+  }
+
+  .movieBlock h1 {
+    font-size: 2.0rem;
+  }
+  
+  .movieBlock p {
+    font-size: 1.0rem;
+  }
+
+  .movieBlock .rightSide {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .Search {
+    padding: 60px 20px;
+  }
+}
+
+
+/* -------------- Add Spoilers Section ----------------*/
+
+@media only screen and (max-width: 450px) {
+  #SendSpoilerTitle {
+    font-size: 1.5rem;
+  }
+
+  #movieName {
+    font-size: 1.2rem;
   }
 }

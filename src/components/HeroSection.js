@@ -5,9 +5,8 @@ export default function HeroSection() {
   let history = useHistory();
   const [query, setQuery] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitting");
     history.push(`search/${query}`);
   }
 

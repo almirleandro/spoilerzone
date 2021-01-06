@@ -40,7 +40,7 @@ export default function App() {
             <Footer />
           </Route>
 
-          <Route path={`/filme/:id`}>
+          <Route path='/filme/:id'>
             <Navbar />
             <Filme />
             <Footer />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import firebase from '../firebase';
 import noImage342 from '../assets/no-image342.png';
+import AddSpoiler from './AddSpoiler'
 
 export default function Filme() {
   const [movieInfo, setMovieInfo] = useState();
@@ -25,7 +26,6 @@ export default function Filme() {
       const DBinfo = items.filter(item => item.id === filmeID);
 
       if (DBinfo[0] === undefined) { // Tentar lembrar por que eu coloquei esse if aqui (lembrei: foi para poder exibir páginas que ainda não têm spoilers (ainda dá para melhorar))
-        console.log('Filme não contém spoilers no banco de dados');
         setspoilersDB([]);
       } else {
         setspoilersDB(DBinfo[0].spoilers);
@@ -41,7 +41,6 @@ export default function Filme() {
       const res = await fetch(url);
       const data  = await res.json();
       setMovieInfo(data);
-      // console.log(data);
     }catch(err){
       console.error(err);
     }
@@ -67,7 +66,6 @@ export default function Filme() {
       });
 
       setDirection(directorsName);
-      // console.log(directorsName);
     }catch(err){
       console.error(err);
     }
@@ -93,7 +91,6 @@ export default function Filme() {
       });
 
       setStreamers(BRStream);
-      // console.log(BRStream);
     }catch(err){
       console.error(err);
     }
@@ -105,18 +102,18 @@ export default function Filme() {
     getDirector();
     getStreaming();
     getSpoilers();
+    // eslint-disable-next-line
   }, [filmeID]);
 
   // Put the spoiler in a JSX format
-  console.log(spoilersDB)
   const spoilersArray = spoilersDB.map(item => {
-    return <p key={item.key}><b>{item.pergunta}</b> {item.text}</p>
+    return <p key={item.key}>{item.text}</p>
   });
 
   return (
     <main className='Filme'>
       {movieInfo ? <div className='movieHeader'>
-        <img src={movieInfo.poster_path ? 'https://image.tmdb.org/t/p/w342' + movieInfo.poster_path : noImage342} alt={spoilersDB.titulo}/>
+        <img src={movieInfo.poster_path ? 'https://image.tmdb.org/t/p/w342' + movieInfo.poster_path : noImage342} alt={movieInfo.title}/>
         <div className='movieDescription'>
           <h1>{movieInfo.title} ({movieInfo.release_date.slice(0,4)})</h1>
           {movieInfo.tagline ? <p id='tagline'><em>"{movieInfo.tagline}"</em></p> : null}
@@ -128,8 +125,9 @@ export default function Filme() {
       </div> : null}
       <div className='spoilerDivision'>Spoilers a seguir</div>
       <div className='spoilers'>
-        {spoilersArray[0] ? spoilersArray : <p>No spoilers</p>}
+        {spoilersArray[0] ? spoilersArray : <p>Esse filme ainda não tem spoilers adicionados. Consulte o <a href='#/catalogo'>Catálogo de Filmes</a> para acessar os filmes que já contêm spoilers.</p>}
       </div>
+      <AddSpoiler haveSpoilers={spoilersArray[0] ? true : false} filmeID={filmeID} movieTitle={movieInfo ? movieInfo.title : null} movieYear={movieInfo ? movieInfo.release_date.slice(0,4) : null} />
     </main>
   )
 }
