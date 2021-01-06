@@ -83,8 +83,8 @@ export default function AddSpoiler(props) {
       <form onSubmit={e => handleSubmit(e)}>
         <p id='movieName'>Filme: {props.movieTitle} {props.movieYear ? `(${props.movieYear})` : null}</p>
         <input placeholder='Seu nome' value={username} onChange={e => setUsername(e.target.value)}></input><br/>
-        <textarea placeholder='Escreva os spoilers aqui' value={spoilerContent} onChange={e => setSpoilerContent(e.target.value)}></textarea><br/>
-        <p id='sendSpoilerMsg'>* Ao enviar dados para o site, tanto o seu nome quanto os spoilers enviados ficarão visíveis ao público. Os spoilers serão analisados antes de serem publicados. Obrigado por sua contribuição!</p>
+        <textarea placeholder='Escreva os spoilers aqui' value={spoilerContent} onChange={e => setSpoilerContent(e.target.value)} required></textarea><br/>
+        <p id='sendSpoilerMsg'>* Ao enviar dados para o site, tanto o seu nome quanto os spoilers enviados ficarão visíveis ao público. Os spoilers serão analisados e estarão sujeitos a alteração antes de serem publicados. Obrigado por sua contribuição!</p>
         <button>Enviar</button>
       </form>
     </div>

@@ -9,6 +9,8 @@ import Catalogo from './components/Catalogo'
 import Filme from './components/Filme'
 import Search from './components/Search'
 
+import ScrollToTop from './ScrollToTop'
+
 import {
   Switch,
   Route,
@@ -19,6 +21,7 @@ export default function App() {
 
   return (
     <HashRouter basename='/'>
+      <ScrollToTop />
       <div className="App">
         <Switch>
 
