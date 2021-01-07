@@ -2,7 +2,7 @@
   "name": "spoiler-zone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://almirleandro.github.io/spoiler-zone",
+  "homepage": "http://almirleandro.github.io/spoilerzone",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
