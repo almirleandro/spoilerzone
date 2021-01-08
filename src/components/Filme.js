@@ -107,7 +107,7 @@ export default function Filme() {
 
   // Put the spoiler in a JSX format
   const spoilersArray = spoilersDB.map(item => {
-    return <p key={item.key}>{item.text}</p>
+    return <li key={item.key}>{item.text}</li>
   });
 
   return (

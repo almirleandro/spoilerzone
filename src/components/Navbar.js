@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <nav className="Navbar">
       <div className='leftSide'>
-        <Link exact={true} to="/">Spoiler Zone</Link>
+        <Link exact={true} to="/" onClick={closeMenu}>Spoiler Zone</Link>
       </div>
       <div className='rightSide'>
         <Link to="/catalogo">Catálogo de filmes</Link>

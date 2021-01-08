@@ -22,6 +22,8 @@ export default function Search() {
     } catch(err) {
       console.error(err);
     }
+
+    window.scrollTo(0, 0);
   }
 
   useEffect(() => {
