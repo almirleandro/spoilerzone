@@ -34,11 +34,48 @@ export default function Catalogo() {
     return letterArray;
   }
 
+  function getCharArray(items) {
+    const getChar = [];
+
+    for (let i = 0; i < 10; i++) {
+      const newChar = items.filter(item => item.titulo.slice(0,1) === i.toString());
+      if (newChar[0] !== undefined) {
+        newChar.forEach(item => getChar.push(item));
+      }
+    };
+
+    const plusChar = items.filter(item => {
+      return (
+        item.titulo.slice(0,1) === '.' ||
+        item.titulo.slice(0,1) === '(' ||
+        item.titulo.slice(0,1) === '#' ||
+        item.titulo.slice(0,1) === '.' ||
+        item.titulo.slice(0,1) === '+' ||
+        item.titulo.slice(0,1) === '-' ||
+        item.titulo.slice(0,1) === '.' ||
+        item.titulo.slice(0,1) === '&' ||
+        item.titulo.slice(0,1) === '@' ||
+        item.titulo.slice(0,1) === '$'
+      )
+    })
+
+    if (plusChar[0] !== undefined) {
+      plusChar.forEach(item => getChar.push(item));
+    }
+
+    const charArray = getChar.map(item => {
+      return <p key={item.id} className='movieLink'><Link to={`filme/${item.id}`}>{item.titulo} ({item.ano})</Link></p>
+    })
+    return charArray;
+  }
+
 
   return (
     <main className='Catalogo'>
       <h1>CATÁLOGO DE FILMES</h1>
       {movieList[0] ? <div>
+        <p className='letterDiv'>#</p>
+        {getCharArray(movieList)}
         <p className='letterDiv'>A</p>
         {getLetterArray(movieList, 'A')}
         <p className='letterDiv'>B</p>
