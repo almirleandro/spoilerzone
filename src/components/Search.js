@@ -47,7 +47,7 @@ export default function Search() {
 
   const noResults = <div className='noResults'>
     <h1>Nenhum filme encontrado</h1>
-    <p id='noResultsText'>Verifique a escrita na pesquisa e tente novamente</p>
+    <p id='noResultsText'>Verifique a escrita do título do filme e tente novamente</p>
   </div>
 
   return <div className='Search'>
