@@ -4,7 +4,7 @@ import noImage185 from '../assets/no-image185.png';
 
 export default function Search() {
   let history = useHistory();
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useState({});
   const [movieArray, setMovieArray] = useState([]);
   const [page, setPage] = useState(1);
 
@@ -45,12 +45,17 @@ export default function Search() {
     </div>
   });
 
+  const noResults = <div className='noResults'>
+    <h1>Nenhum filme encontrado</h1>
+    <p id='noResultsText'>Verifique a escrita na pesquisa e tente novamente</p>
+  </div>
+
   return <div className='Search'>
-    <main className='movieGrid'>{movieArray[0] ? movieGrid : <h1>Carregando filmes...</h1>}</main><br/>
-    {searchResult.page ? <><div className='btnFlex'>
+    <main className='movieGrid'>{searchResult.page === undefined ? <h1>Carregando filmes...</h1> : searchResult.total_pages === 0 ? noResults : movieGrid}</main><br/>
+    {searchResult.page === undefined ? null : searchResult.total_pages === 0 ? null : <><div className='btnFlex'>
       <button onClick={() => setPage(page - 1)} style={searchResult.page === 1 ? {display: 'none'} : null}>Página anterior</button>
       <button onClick={() => setPage(page + 1)} style={searchResult.page === searchResult.total_pages ? {display: 'none'} : null}>Próxima página</button>
     </div><br/>
-    <p id='pageCount'>{'Página ' + searchResult.page + ' de ' + searchResult.total_pages}</p></> : null}
+    <p id='pageCount'>{'Página ' + searchResult.page + ' de ' + searchResult.total_pages}</p></>}
   </div>
 }
