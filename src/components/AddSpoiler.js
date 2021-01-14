@@ -72,7 +72,6 @@ export default function AddSpoiler(props) {
     }
 
     // erase the input
-    setUsername('');
     setSpoilerContent('');
     alert('Obrigado por contribuir para o desenvolvimento do site!');
   }
