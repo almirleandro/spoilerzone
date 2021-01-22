@@ -6,9 +6,9 @@ A website where you can read and share spoilers of your favorite movies. Created
 
 ## Table of Contents
 
-* [Motivation](#Motivation)
 * [Technologies](#Technologies)
 * [Launch](#Launch)
+* [Contibutions](#Contibutions)
 
 ## Technologies
 
