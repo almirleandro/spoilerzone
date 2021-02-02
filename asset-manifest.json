@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/spoilerzone/static/css/main.85edd043.chunk.css",
-    "main.js": "/spoilerzone/static/js/main.392c2d96.chunk.js",
-    "main.js.map": "/spoilerzone/static/js/main.392c2d96.chunk.js.map",
+    "main.js": "/spoilerzone/static/js/main.80ea1557.chunk.js",
+    "main.js.map": "/spoilerzone/static/js/main.80ea1557.chunk.js.map",
     "runtime-main.js": "/spoilerzone/static/js/runtime-main.eeb720fb.js",
     "runtime-main.js.map": "/spoilerzone/static/js/runtime-main.eeb720fb.js.map",
     "static/js/2.4d635774.chunk.js": "/spoilerzone/static/js/2.4d635774.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.eeb720fb.js",
     "static/js/2.4d635774.chunk.js",
     "static/css/main.85edd043.chunk.css",
-    "static/js/main.392c2d96.chunk.js"
+    "static/js/main.80ea1557.chunk.js"
   ]
 }
