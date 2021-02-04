@@ -1,23 +1,36 @@
 {
   "files": {
-    "main.css": "/spoilerzone/static/css/main.85edd043.chunk.css",
-    "main.js": "/spoilerzone/static/js/main.1a4b9636.chunk.js",
-    "main.js.map": "/spoilerzone/static/js/main.1a4b9636.chunk.js.map",
-    "runtime-main.js": "/spoilerzone/static/js/runtime-main.eeb720fb.js",
-    "runtime-main.js.map": "/spoilerzone/static/js/runtime-main.eeb720fb.js.map",
-    "static/js/2.8ca98fb2.chunk.js": "/spoilerzone/static/js/2.8ca98fb2.chunk.js",
-    "static/js/2.8ca98fb2.chunk.js.map": "/spoilerzone/static/js/2.8ca98fb2.chunk.js.map",
+    "static/js/0.307c4e06.chunk.js": "/spoilerzone/static/js/0.307c4e06.chunk.js",
+    "static/js/0.307c4e06.chunk.js.map": "/spoilerzone/static/js/0.307c4e06.chunk.js.map",
+    "main.css": "/spoilerzone/static/css/main.78b5fd62.chunk.css",
+    "main.js": "/spoilerzone/static/js/main.e24ab165.chunk.js",
+    "main.js.map": "/spoilerzone/static/js/main.e24ab165.chunk.js.map",
+    "runtime-main.js": "/spoilerzone/static/js/runtime-main.05e67b73.js",
+    "runtime-main.js.map": "/spoilerzone/static/js/runtime-main.05e67b73.js.map",
+    "static/js/3.91b5544d.chunk.js": "/spoilerzone/static/js/3.91b5544d.chunk.js",
+    "static/js/3.91b5544d.chunk.js.map": "/spoilerzone/static/js/3.91b5544d.chunk.js.map",
+    "static/js/4.021273e1.chunk.js": "/spoilerzone/static/js/4.021273e1.chunk.js",
+    "static/js/4.021273e1.chunk.js.map": "/spoilerzone/static/js/4.021273e1.chunk.js.map",
+    "static/js/5.5ec5c328.chunk.js": "/spoilerzone/static/js/5.5ec5c328.chunk.js",
+    "static/js/5.5ec5c328.chunk.js.map": "/spoilerzone/static/js/5.5ec5c328.chunk.js.map",
+    "static/js/6.892c242c.chunk.js": "/spoilerzone/static/js/6.892c242c.chunk.js",
+    "static/js/6.892c242c.chunk.js.map": "/spoilerzone/static/js/6.892c242c.chunk.js.map",
+    "static/js/7.caf81478.chunk.js": "/spoilerzone/static/js/7.caf81478.chunk.js",
+    "static/js/7.caf81478.chunk.js.map": "/spoilerzone/static/js/7.caf81478.chunk.js.map",
+    "static/js/8.ceaebb63.chunk.js": "/spoilerzone/static/js/8.ceaebb63.chunk.js",
+    "static/js/8.ceaebb63.chunk.js.map": "/spoilerzone/static/js/8.ceaebb63.chunk.js.map",
     "index.html": "/spoilerzone/index.html",
-    "static/css/main.85edd043.chunk.css.map": "/spoilerzone/static/css/main.85edd043.chunk.css.map",
-    "static/js/2.8ca98fb2.chunk.js.LICENSE.txt": "/spoilerzone/static/js/2.8ca98fb2.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/spoilerzone/static/media/Spoiler Zone 2.53597066.png",
+    "static/css/main.78b5fd62.chunk.css.map": "/spoilerzone/static/css/main.78b5fd62.chunk.css.map",
+    "static/js/0.307c4e06.chunk.js.LICENSE.txt": "/spoilerzone/static/js/0.307c4e06.chunk.js.LICENSE.txt",
+    "static/js/3.91b5544d.chunk.js.LICENSE.txt": "/spoilerzone/static/js/3.91b5544d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/spoilerzone/static/media/Spoiler Zone 2.105005f4.png",
     "static/media/TMDB-logo.bf7f470b.svg": "/spoilerzone/static/media/TMDB-logo.bf7f470b.svg",
-    "static/media/inception-spinning.e5e59a80.png": "/spoilerzone/static/media/inception-spinning.e5e59a80.png"
+    "static/media/inception-spinning.bd62bff9.png": "/spoilerzone/static/media/inception-spinning.bd62bff9.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.eeb720fb.js",
-    "static/js/2.8ca98fb2.chunk.js",
-    "static/css/main.85edd043.chunk.css",
-    "static/js/main.1a4b9636.chunk.js"
+    "static/js/runtime-main.05e67b73.js",
+    "static/js/3.91b5544d.chunk.js",
+    "static/css/main.78b5fd62.chunk.css",
+    "static/js/main.e24ab165.chunk.js"
   ]
 }
