@@ -3,8 +3,8 @@
     "static/js/0.307c4e06.chunk.js": "/spoilerzone/static/js/0.307c4e06.chunk.js",
     "static/js/0.307c4e06.chunk.js.map": "/spoilerzone/static/js/0.307c4e06.chunk.js.map",
     "main.css": "/spoilerzone/static/css/main.d064c4b5.chunk.css",
-    "main.js": "/spoilerzone/static/js/main.01752144.chunk.js",
-    "main.js.map": "/spoilerzone/static/js/main.01752144.chunk.js.map",
+    "main.js": "/spoilerzone/static/js/main.213c0971.chunk.js",
+    "main.js.map": "/spoilerzone/static/js/main.213c0971.chunk.js.map",
     "runtime-main.js": "/spoilerzone/static/js/runtime-main.522b260e.js",
     "runtime-main.js.map": "/spoilerzone/static/js/runtime-main.522b260e.js.map",
     "static/js/3.91b5544d.chunk.js": "/spoilerzone/static/js/3.91b5544d.chunk.js",
@@ -20,8 +20,6 @@
     "static/js/8.1e6f9401.chunk.js": "/spoilerzone/static/js/8.1e6f9401.chunk.js",
     "static/js/8.1e6f9401.chunk.js.map": "/spoilerzone/static/js/8.1e6f9401.chunk.js.map",
     "index.html": "/spoilerzone/index.html",
-    "service-worker.js": "/spoilerzone/service-worker.js",
-    "service-worker.js.map": "/spoilerzone/service-worker.js.map",
     "static/css/main.d064c4b5.chunk.css.map": "/spoilerzone/static/css/main.d064c4b5.chunk.css.map",
     "static/js/0.307c4e06.chunk.js.LICENSE.txt": "/spoilerzone/static/js/0.307c4e06.chunk.js.LICENSE.txt",
     "static/js/3.91b5544d.chunk.js.LICENSE.txt": "/spoilerzone/static/js/3.91b5544d.chunk.js.LICENSE.txt",
@@ -33,6 +31,6 @@
     "static/js/runtime-main.522b260e.js",
     "static/js/3.91b5544d.chunk.js",
     "static/css/main.d064c4b5.chunk.css",
-    "static/js/main.01752144.chunk.js"
+    "static/js/main.213c0971.chunk.js"
   ]
 }
