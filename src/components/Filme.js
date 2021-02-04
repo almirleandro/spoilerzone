@@ -35,7 +35,7 @@ export default function Filme() {
 
   // API calls
   const getMovie = async () => {    
-    const url = `https://api.themoviedb.org/3/movie/${filmeID}?api_key=53d1ed1dbd54c7022b78b3f3b8a42342&language=pt-BR`;
+    const url = `https://api.themoviedb.org/3/movie/${filmeID}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=pt-BR`;
     
     try {
       const res = await fetch(url);
@@ -46,7 +46,7 @@ export default function Filme() {
     }
   }
   const getDirector = async () => {    
-    const url = `https://api.themoviedb.org/3/movie/${filmeID}/credits?api_key=53d1ed1dbd54c7022b78b3f3b8a42342&language=en-US`;
+    const url = `https://api.themoviedb.org/3/movie/${filmeID}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`;
     
     try {
       const res = await fetch(url);
@@ -71,7 +71,7 @@ export default function Filme() {
     }
   }
   const getStreaming = async () => {    
-    const url = `https://api.themoviedb.org/3/movie/${filmeID}/watch/providers?api_key=53d1ed1dbd54c7022b78b3f3b8a42342`;
+    const url = `https://api.themoviedb.org/3/movie/${filmeID}/watch/providers?api_key=${process.env.REACT_APP_TMDB_KEY}`;
     
     try {
       const res = await fetch(url);
