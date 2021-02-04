@@ -72,7 +72,8 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705)), url(./assets/Spoiler\ Zone\ 2.png);
 
   /* Set a specific height */
-  min-height: 93vh;
+  height: 93vh;
+  min-height: 410px;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: top;
