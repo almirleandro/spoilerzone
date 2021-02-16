@@ -7,6 +7,7 @@ A website where you can read and share spoilers of your favorite movies. Created
 ## Table of Contents
 
 * [Technologies](#Technologies)
+* [Server](#Server)
 * [Launch](#Launch)
 * [Contibutions](#Contibutions)
 
@@ -18,7 +19,11 @@ Spoiler Zone uses:
 * GitHub Pages 3.1.0
 * Firebase 8.2.1
 * NPM 6.14.10
-* Node14.15.4
+* Node 14.15.4
+
+## Server
+
+This website uses a server to manage the API fetch calls, mainly for security reasons. You can check it at [https://github.com/almirleandro/spoilerzone-server](https://github.com/almirleandro/spoilerzone-server)
 
 ## Launch
 
@@ -46,6 +51,12 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See this section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+#### `npm run deploy`
+
+Builds the app for production and deploys it to GitHub Pages.
+
+Before you use this command, you need to change `package.json` to use your own GitHub profile. You will find all the steps to do it in [this link](https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f).
 
 #### `npm run eject`
 
