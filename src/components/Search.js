@@ -12,10 +12,15 @@ export default function Search() {
   const pesquisa = query;
 
   const getSearchResults = async () => {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=pt-BR&query=${pesquisa}&page=${page}&include_adult=false`;
-    
     try {
-      const res = await fetch(url);
+      const res = await fetch(`http://localhost:3002/tmdb/search`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify({
+          pesquisa: pesquisa,
+          page: page
+        })
+      });
       const data  = await res.json();
       setSearchResult(data);
       setMovieArray(data.results);

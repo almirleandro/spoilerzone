@@ -18,7 +18,7 @@ export default function HeroSection() {
           <p>PARA ESPERAR O FINAL</p>
           <p>DO FILME</p>
           <form onSubmit={handleSubmit}>
-            <input placeholder={'Pesquise um filme'} value={query} onChange={e => setQuery(e.target.value)} aria-label='Pesquise um filme' autoFocus></input>
+            <input placeholder={'Pesquise um filme'} value={query} onChange={e => setQuery(e.target.value)} aria-label='Pesquise um filme' autoFocus required></input>
           </form>
         </div>
       </div>

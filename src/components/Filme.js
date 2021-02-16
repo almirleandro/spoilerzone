@@ -35,21 +35,30 @@ export default function Filme() {
 
   // API calls
   const getMovie = async () => {    
-    const url = `https://api.themoviedb.org/3/movie/${filmeID}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=pt-BR`;
-    
     try {
-      const res = await fetch(url);
+      const res = await fetch(`http://localhost:3002/tmdb/movie`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify({
+          filmeID: filmeID
+        })
+      });
       const data  = await res.json();
       setMovieInfo(data);
     }catch(err){
       console.error(err);
     }
   }
+
   const getDirector = async () => {    
-    const url = `https://api.themoviedb.org/3/movie/${filmeID}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`;
-    
     try {
-      const res = await fetch(url);
+      const res = await fetch(`http://localhost:3002/tmdb/credits`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify({
+          filmeID: filmeID
+        })
+      });
       const data  = await res.json();
 
       const directorsArray = data.crew.filter(item => item.job === 'Director');
@@ -70,11 +79,16 @@ export default function Filme() {
       console.error(err);
     }
   }
+  
   const getStreaming = async () => {    
-    const url = `https://api.themoviedb.org/3/movie/${filmeID}/watch/providers?api_key=${process.env.REACT_APP_TMDB_KEY}`;
-    
     try {
-      const res = await fetch(url);
+      const res = await fetch(`http://localhost:3002/tmdb/providers`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify({
+          filmeID: filmeID
+        })
+      });
       const data  = await res.json();
 
       const streamersArray = data.results.BR.flatrate;
