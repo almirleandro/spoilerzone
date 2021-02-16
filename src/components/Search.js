@@ -13,7 +13,7 @@ export default function Search() {
 
   const getSearchResults = async () => {
     try {
-      const res = await fetch(`http://localhost:3002/tmdb/search`, {
+      const res = await fetch(`https://spoilerzone-server.herokuapp.com/tmdb/search`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify({
