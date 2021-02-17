@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import firebase from '../firebase';
 
 export default function Catalogo() {
 
   const [movieList, setMovieList] = useState([]);
 
-  const ref = firebase.firestore().collection("moviespoilersdb");
-  const getMovieList = () => {
-    ref.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-          items.push(doc.data());
-      });
+  const getMovieList = async () => {
+    const data = await fetch(`http://localhost:3002/fire/catalog`);
+    const items = await data.json();
+    console.log(items)
 
-      setMovieList(items);
+    setMovieList(items);
 
-    });
   };
 
   

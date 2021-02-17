@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import firebase from '../firebase';
 import noImage342 from '../assets/no-image342.png';
 import AddSpoiler from './AddSpoiler'
 
@@ -15,35 +14,36 @@ export default function Filme() {
   const filmeID = id;
   
   // Get spoilers from database
-  const ref = firebase.firestore().collection("moviespoilersdb");
-  const getSpoilers = () => {
-    ref.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-          items.push(doc.data());
-      });
-      
-      const DBinfo = items.filter(item => item.id === filmeID);
-
-      if (DBinfo[0] === undefined) { // Tentar lembrar por que eu coloquei esse if aqui (lembrei: foi para poder exibir páginas que ainda não têm spoilers (ainda dá para melhorar))
-        setspoilersDB([]);
-      } else {
-        setspoilersDB(DBinfo[0].spoilers);
-      }
+  const getSpoilers = async () => {
+    const res = await fetch(`http://localhost:3002/fire/film`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:JSON.stringify({
+        filmeID: filmeID
+      })
     });
+    const data = await res.json();
+    
+    const DBinfo = [data];
+
+    if (DBinfo[0] === null) { // Tentar lembrar por que eu coloquei esse if aqui (lembrei: foi para poder exibir páginas que ainda não têm spoilers (ainda dá para melhorar))
+      setspoilersDB([]);
+    } else {
+      setspoilersDB(DBinfo[0].spoilers);
+    }
   }
 
   // API calls
   const getMovie = async () => {    
     try {
-      const res = await fetch(`https://spoilerzone-server.herokuapp.com/tmdb/movie`, {
+      const res = await fetch(`http://localhost:3002/tmdb/movie`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify({
           filmeID: filmeID
         })
       });
-      const data  = await res.json();
+      const data = await res.json();
       setMovieInfo(data);
     }catch(err){
       console.error(err);
@@ -52,7 +52,7 @@ export default function Filme() {
 
   const getDirector = async () => {    
     try {
-      const res = await fetch(`https://spoilerzone-server.herokuapp.com/tmdb/credits`, {
+      const res = await fetch(`http://localhost:3002/tmdb/credits`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify({
@@ -82,7 +82,7 @@ export default function Filme() {
   
   const getStreaming = async () => {    
     try {
-      const res = await fetch(`https://spoilerzone-server.herokuapp.com/tmdb/providers`, {
+      const res = await fetch(`http://localhost:3002/tmdb/providers`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify({
@@ -106,7 +106,7 @@ export default function Filme() {
 
       setStreamers(BRStream);
     }catch(err){
-      console.error(err);
+      setStreamers(false);
     }
   }
 

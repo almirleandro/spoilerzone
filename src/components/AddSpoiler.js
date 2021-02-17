@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import firebase from '../firebase';
 
 export default function AddSpoiler(props) {
   const [username, setUsername] = useState('');
@@ -7,7 +6,6 @@ export default function AddSpoiler(props) {
 
   const [haveData, setHaveData] = useState();
   const [whatData, setWhatData] = useState({});
-  const secondRef = firebase.firestore().collection("spoilersforanalysis");
 
   useEffect(() => {
     setUsername('');
@@ -17,25 +15,27 @@ export default function AddSpoiler(props) {
   }, [props.filmeID]);
 
   // get data from secondRef
-  function getSecondDB() {
-    secondRef.onSnapshot((querySnapshot) => {
-      const items = []; // contains all the second database
-      querySnapshot.forEach((doc) => {
-          items.push(doc.data());
-      });
-      
-      const DBinfo = items.filter(item => item.id === props.filmeID); // array with one object with the movie spoilers
-  
-      if (DBinfo[0] === undefined) { // Filme não contém spoilers ainda não revisados
-        setHaveData(false);
-      } else { // Filme contém spoilers ainda não revisados
-        setWhatData(DBinfo[0]);
-        setHaveData(true);
-      }
+  async function getSecondDB() {
+    const res = await fetch(`http://localhost:3002/fire/getdb`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:JSON.stringify({
+        filmeID: props.filmeID
+      })
     });
+    const data = await res.json();
+    
+    const DBinfo = [data] // array with one object with the movie spoilers
+
+    if (DBinfo[0] === null) { // Filme não contém spoilers ainda não revisadosconsole.log('sorry, no movie')
+      setHaveData(false);
+    } else { // Filme contém spoilers ainda não revisados
+      setWhatData(DBinfo[0]);
+      setHaveData(true);
+    }
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const inputObject = {
@@ -54,21 +54,26 @@ export default function AddSpoiler(props) {
     if (haveData) {
       const oldData = whatData;
       oldData.newInfo.push(inputObject.newInfo[0])
-      secondRef
-        .doc(props.filmeID)
-        .update(oldData)
-        .catch((err) => {
-          console.log(err);
-        });
+      await fetch(`http://localhost:3002/fire/update`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify({
+          filmeID: props.filmeID,
+          content: oldData
+        })
+      });
 
+    // else, create it
     } else {
-      // else, create it
-      secondRef
-        .doc(props.filmeID)
-        .set(inputObject)
-        .catch((err) => {
-          console.log(err);
-        });
+      await fetch(`http://localhost:3002/fire/add`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:JSON.stringify({
+          filmeID: props.filmeID,
+          content: inputObject
+        })
+      });
+      getSecondDB();
     }
 
     // erase the input
