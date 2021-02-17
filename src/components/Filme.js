@@ -15,7 +15,7 @@ export default function Filme() {
   
   // Get spoilers from database
   const getSpoilers = async () => {
-    const res = await fetch(`http://localhost:3002/fire/film`, {
+    const res = await fetch(`https://spoilerzone-server.herokuapp.com/fire/film`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body:JSON.stringify({
@@ -36,7 +36,7 @@ export default function Filme() {
   // API calls
   const getMovie = async () => {    
     try {
-      const res = await fetch(`http://localhost:3002/tmdb/movie`, {
+      const res = await fetch(`https://spoilerzone-server.herokuapp.com/tmdb/movie`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify({
@@ -52,7 +52,7 @@ export default function Filme() {
 
   const getDirector = async () => {    
     try {
-      const res = await fetch(`http://localhost:3002/tmdb/credits`, {
+      const res = await fetch(`https://spoilerzone-server.herokuapp.com/tmdb/credits`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify({
@@ -82,7 +82,7 @@ export default function Filme() {
   
   const getStreaming = async () => {    
     try {
-      const res = await fetch(`http://localhost:3002/tmdb/providers`, {
+      const res = await fetch(`https://spoilerzone-server.herokuapp.com/tmdb/providers`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify({

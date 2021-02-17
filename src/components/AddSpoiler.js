@@ -16,7 +16,7 @@ export default function AddSpoiler(props) {
 
   // get data from secondRef
   async function getSecondDB() {
-    const res = await fetch(`http://localhost:3002/fire/getdb`, {
+    const res = await fetch(`https://spoilerzone-server.herokuapp.com/fire/getdb`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body:JSON.stringify({
@@ -54,7 +54,7 @@ export default function AddSpoiler(props) {
     if (haveData) {
       const oldData = whatData;
       oldData.newInfo.push(inputObject.newInfo[0])
-      await fetch(`http://localhost:3002/fire/update`, {
+      await fetch(`https://spoilerzone-server.herokuapp.com/fire/update`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify({
@@ -65,7 +65,7 @@ export default function AddSpoiler(props) {
 
     // else, create it
     } else {
-      await fetch(`http://localhost:3002/fire/add`, {
+      await fetch(`https://spoilerzone-server.herokuapp.com/fire/add`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify({

@@ -6,7 +6,7 @@ export default function Catalogo() {
   const [movieList, setMovieList] = useState([]);
 
   const getMovieList = async () => {
-    const data = await fetch(`http://localhost:3002/fire/catalog`);
+    const data = await fetch(`https://spoilerzone-server.herokuapp.com/fire/catalog`);
     const items = await data.json();
     console.log(items)
 
