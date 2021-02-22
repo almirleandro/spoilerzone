@@ -25,6 +25,20 @@ Spoiler Zone uses:
 
 This website uses a server to manage the API fetch calls, mainly for security reasons. You can check it at [https://github.com/almirleandro/spoilerzone-server](https://github.com/almirleandro/spoilerzone-server)
 
+All the technical information about movies in this website is from The Movie Database API. The API key is stored as an environment variable in Heroku.
+
+The spoilers, on the other hand, are stored in a Firebase database, which is also called from the server, not from the front end. The path for the configuration of the Firebase package is stored as an environment variable too.
+
+CORS, Helmet and Express Rate Limit were used as tools to ensure the security of the server, which, just as the Firebase database, is configured to receive calls only from [the original website](https://almirleandro.github.io/spoilerzone/#/).
+
+## Testing
+
+The code for testings can be found in the file `App.test.js`. In the project directory, you can run `npm test`, which Launches the test runner in the interactive watch mode.
+
+You can also run `npm test -- --coverage` to include a coverage report to the test.
+
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
 ## Launch
 
 In the project directory, you can run:
@@ -36,11 +50,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 #### `npm run build`
 
