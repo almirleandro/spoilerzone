@@ -8,6 +8,8 @@ import '@testing-library/jest-dom/extend-expect'
 
 import App from './App'
 
+window.scrollTo = jest.fn();
+
 describe('Navbar', () => {
   test('"Sobre o site" link points to the correct page', async () => {
     render(<App />, { wrapper: BrowserRouter })
@@ -39,6 +41,10 @@ describe('Navbar', () => {
     const hero = document.querySelector('.HeroSection');
     expect(hero).toBeInTheDocument()
   })
+
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
 });
 
 describe('Sidenav', () => {
@@ -61,17 +67,8 @@ describe('Sidenav', () => {
     userEvent.click(link);
     await screen.findByRole('heading', { name: /CATÁLOGO DE FILMES/i });
   })
+
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
 });
-
-// describe('Catalogo', () => {
-//   test('Display list of movies', async () => {
-//     render(<App />, { wrapper: BrowserRouter })
-
-//     const container = document.querySelector('.rightSide');
-//     const link = within(container).getByRole('link', { name: /Catálogo de filmes/i });
-    
-//     userEvent.click(link);
-//     await screen.findByRole('heading', { name: /CATÁLOGO DE FILMES/i });
-//     expect(fetch).toHaveBeenCalledWith('https://spoilerzone-server.herokuapp.com/fire/catalog');
-//   })
-// });

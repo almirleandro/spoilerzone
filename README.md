@@ -8,6 +8,7 @@ A website where you can read and share spoilers of your favorite movies. Created
 
 * [Technologies](#Technologies)
 * [Server](#Server)
+* [Testing](#Testing)
 * [Launch](#Launch)
 * [Contibutions](#Contibutions)
 
