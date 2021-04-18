@@ -56,7 +56,7 @@ export default function Search() {
   </div>
 
   return <div className='Search'>
-    <main className='movieGrid'>{searchResult.page === undefined ? <h1>Site em manutenção</h1> : searchResult.total_pages === 0 ? noResults : movieGrid}</main><br/>
+    <main className='movieGrid'>{searchResult.page === undefined ? <h1>Carregando filmes...</h1> : searchResult.total_pages === 0 ? noResults : movieGrid}</main><br/>
     {searchResult.page === undefined ? null : searchResult.total_pages === 0 ? null : <><div className='btnFlex'>
       <button onClick={() => setPage(page - 1)} style={searchResult.page === 1 ? {display: 'none'} : null}>Página anterior</button>
       <button onClick={() => setPage(page + 1)} style={searchResult.page === searchResult.total_pages ? {display: 'none'} : null}>Próxima página</button>

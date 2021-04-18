@@ -122,7 +122,7 @@ export default function Catalogo() {
         {getLetterArray(movieList, 'Y')}
         <p className='letterDiv'>Z</p>
         {getLetterArray(movieList, 'Z')}
-      </div> : <p className='letterDiv'>Site em manutenção</p>}
+      </div> : <p className='letterDiv'>Carregando filmes...</p>}
     </main>
   )
 }
