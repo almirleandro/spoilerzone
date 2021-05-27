@@ -3,12 +3,12 @@
     "main.css": "/spoilerzone/static/css/main.d064c4b5.chunk.css",
     "main.js": "/spoilerzone/static/js/main.c63da4f5.chunk.js",
     "main.js.map": "/spoilerzone/static/js/main.c63da4f5.chunk.js.map",
-    "runtime-main.js": "/spoilerzone/static/js/runtime-main.79eb7977.js",
-    "runtime-main.js.map": "/spoilerzone/static/js/runtime-main.79eb7977.js.map",
+    "runtime-main.js": "/spoilerzone/static/js/runtime-main.a5301ea9.js",
+    "runtime-main.js.map": "/spoilerzone/static/js/runtime-main.a5301ea9.js.map",
     "static/js/2.1ce34937.chunk.js": "/spoilerzone/static/js/2.1ce34937.chunk.js",
     "static/js/2.1ce34937.chunk.js.map": "/spoilerzone/static/js/2.1ce34937.chunk.js.map",
-    "static/js/3.a30bf080.chunk.js": "/spoilerzone/static/js/3.a30bf080.chunk.js",
-    "static/js/3.a30bf080.chunk.js.map": "/spoilerzone/static/js/3.a30bf080.chunk.js.map",
+    "static/js/3.78e259a9.chunk.js": "/spoilerzone/static/js/3.78e259a9.chunk.js",
+    "static/js/3.78e259a9.chunk.js.map": "/spoilerzone/static/js/3.78e259a9.chunk.js.map",
     "static/js/4.463754ca.chunk.js": "/spoilerzone/static/js/4.463754ca.chunk.js",
     "static/js/4.463754ca.chunk.js.map": "/spoilerzone/static/js/4.463754ca.chunk.js.map",
     "static/js/5.a3a1c94e.chunk.js": "/spoilerzone/static/js/5.a3a1c94e.chunk.js",
@@ -27,7 +27,7 @@
     "static/media/inception-spinning.bd62bff9.png": "/spoilerzone/static/media/inception-spinning.bd62bff9.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.79eb7977.js",
+    "static/js/runtime-main.a5301ea9.js",
     "static/js/2.1ce34937.chunk.js",
     "static/css/main.d064c4b5.chunk.css",
     "static/js/main.c63da4f5.chunk.js"
